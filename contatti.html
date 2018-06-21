@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+
+    <title>Contatti</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="lista.html">Lista </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <h1>Contatti</h1>
+
+    <form action="" method="GET">
+
+        <div class="formItem">
+            <label for="firstname">Nome</label>
+            <input type="text" name="firstname" placeholder="inserisci il tuo nome" required="required" />
+        </div>
+
+        <div class="formItem">
+            <label for="age">Età</label>
+            <input type="number" name="age" min="18" max="40" placeholder="la tua età" required />
+        </div>
+
+        <div class="formItem">
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="inserisci la tua email" required/>
+        </div>
+
+        <div class="formItem">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="inserisci la tua password" required="required" />
+        </div>
+
+
+        <div class="formItem">
+            <label for="date">Data</label>
+            <input type="date" name="date" placeholder="inserisci la tua data" required="required" />
+        </div>
+
+
+        <div class="formItem">
+            <label for="type">Metodo contatto</label>
+            <select name="type" required>
+                <option value="" disabled selected>Seleziona un'opzione</option>
+                <option value="">Email</option>
+                <option value="">Telefono</option>
+                <option value="">Posta</option>
+            </select>
+        </div>
+
+        <div class="formItem">
+            <label for="privacy">Accettazione privacy</label>
+            <input type="checkbox" name="privacy" required="required" />
+
+            <label for="privacy">Accettazione privacy</label>
+            <input type="checkbox" name="privacy2" required="required" />
+
+            <label for="privacy">Accettazione privacy</label>
+            <input type="checkbox" name="privacy3" required="required" />
+        </div>
+
+        <div class="formItem">
+            <label for="privacy">Sposato</label>
+            <input type="radio" group="radioGroup" name="status" value="sposato" required="required" />
+
+            <label for="privacy">Celibe</label>
+            <input type="radio" group="radioGroup" name="status" value="celibe" required="required" />
+
+            <label for="privacy">dsadasdsa</label>
+            <input type="radio" group="radioGroup" name="status" value="asd" required="required" />
+        </div>
+        <input type="submit" value="Invia il form!">
+
+    </form>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

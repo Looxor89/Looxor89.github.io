@@ -1,0 +1,24 @@
+[{
+        "name": "Pippo",
+        "age": 25,
+        "children": [{
+                "name": "Aldo",
+                "age": 8
+            },
+            {
+                "name": "Francesco",
+                "age": 4
+            }
+        ],
+        "partner": {
+            "name": "Carlo",
+            "age": 34
+        }
+    },
+    {
+        "name": "Marianna",
+        "age": 52,
+        "children": [],
+        "partner": null
+    }
+]

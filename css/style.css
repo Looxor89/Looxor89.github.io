@@ -1,0 +1,29 @@
+body {
+    margin-bottom: 40px;
+}
+
+#mainMenu {
+    margin-bottom: 40px;
+}
+
+#mainMenu .active .nav-link {
+    cursor: default;
+}
+
+.pippo {
+    color: blue;
+    font-size: 20px;
+}
+
+.box {
+    border: 1px solid red;
+    padding: 20px;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.orange {
+    background-color: orange;
+}
