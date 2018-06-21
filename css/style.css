@@ -27,3 +27,22 @@ body {
 .orange {
     background-color: orange;
 }
+
+#emptyContent {}
+
+#loadingBar {
+    display: none
+}
+
+#usersTable {
+    display: none
+}
+
+
+/*.start #loadingBar {
+    display: none
+}
+
+.start #usersTable {
+    display: none
+}*/

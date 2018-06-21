@@ -10,7 +10,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Ciao nuovo titol dasdaso</title>
+    <title>Prova tabella</title>
 
 </head>
 
@@ -47,13 +47,23 @@
                         <div class="col-md-8 input-group mb-3">
                             <input type="text" class="form-control" placeholder="Search.." name="search">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">Cerca</button>
+                                <button id="searchBtn" class="btn btn-outline-secondary" type="button">Cerca</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <table class="table table-striped">
+                <div class="card-body start">
+
+                    <div id="emptyContent">
+                        <h2>Cerca...</h2>
+                        <img src="http://lorempizza.com/600/400" alt="">
+                    </div>
+
+                    <div id="loadingBar" class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width: 100%;">Loading</div>
+                    </div>
+
+                    <table id="usersTable" class="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">id</th>
@@ -63,29 +73,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td scope="row">1</td>
-                                <td>Walter White</td>
-                                <td>email@asdsadas.it</td>
-                                <td>Via le mani dal naso 91</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">19</td>
-                                <td>Pippo</td>
-                                <td>pippo@email.it</td>
-                                <td>Piazza la bomba e scappa</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">1</td>
-                                <td>Walter White</td>
-                                <td>email@asdsadas.it</td>
-                                <td>Via le mani dal naso 91</td>
-                            </tr>
+
+
                         </tbody>
                     </table>
                 </div>
+
                 <div class="card-footer text-muted">
-                    Footer
+                    Copyright by Bukkì
                 </div>
             </div>
 

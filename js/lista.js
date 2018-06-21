@@ -1,21 +1,68 @@
 console.log("Pagina lista!")
 
 var SERVICE_URL = "https://jsonplaceholder.typicode.com"
-var Person = {
-    "name": "Pippo",
-    "age": 25,
-    "children": [{
-            "name": "Aldo",
-            "age": 8
-        },
-        {
-            "name": "Francesco",
-            "age": 4
-        }
-    ],
-    "partner": {
-        "name": "Carlo",
-        "age": 34
+var API_KEY = "AIzaSyD8B--R9FDNkyhdPwGW2o6YsJB4pMO_w6U"
+var YOUTUBE_URL = "https://www.googleapis.com/youtube/v3/search?part=snippet&key="
+
+jQuery(document).ready(function($) { //il dollaro significa che quando questa funzione viene eseguita si porta di nascosto JQUERY come argomento.
+    //La pagina è completamente carica e jQuery è pronto!
+    console.log("READY!")
+        //console.log("arguments", arguments)
+
+    /*$("#loadingBar").hide(); //nascondo la barra di caricamento
+    $("#usersTable").hide(); //nascondo la Tabella*/
+
+    $("#searchBtn")
+        .click(function() {
+            console.log("Click");
+            getUser();
+        })
+
+    function getUser() {
+        console.log("Chiamo getUsers");
+
+        $("#loadingBar").show();
+        $("#emptyContent").fadeOut(2000);
+
+        $.getJSON(SERVICE_URL + "/users", function(response) {
+            var users = response;
+            console.log("Users", users);
+            fillTable(users);
+        })
+
     }
-}
-console.log(Person.name, Person.children[0].name)
+
+    function fillTable(arrayData) {
+        //creo la funzione FILLTABLE 
+        var $tableBody = $("#usersTable tbody")
+
+        $tableBody.html("");
+
+        $.each(arrayData, function(index, user) {
+            console.log(index, user)
+                //creo una nuova riga vuota
+            var newRow = jQuery("<tr>1</tr>");
+            //inserisco dentro la riga vuota un tag con il valore che voglio <td>VALORE</td>
+            newRow.append("<td>" + user.id + "</td>") //id
+            newRow.append("<td>" + user.name + "</td>") //name
+            newRow.append("<td>" + user.email + "</td>") //email
+            newRow.append("<td>" + user.address.street + " " + user.address.suite + "</td>") //userName
+                //appendo la riga alla tabella
+            $tableBody.append(newRow)
+        })
+
+        //ritardo MANUALMENTE di due secondi
+        setTimeout(function() {
+            $("#loadingBar").fadeOut(); //nascondo la barra di caricamento
+            $("#usersTable").fadeIn(); //mostro la tabella
+        }, 2 * 1000)
+    }
+
+
+
+
+
+
+
+    console.log("fine file lista...")
+})
