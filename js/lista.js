@@ -13,8 +13,8 @@ jQuery(document).ready(function($) { //il dollaro significa che quando questa fu
     $("#usersTable").hide(); //nascondo la Tabella*/
 
     $("#searchBtn")
-        .click(function() {
-            console.log("Click");
+        .click(function(event) {
+            console.log("Click", event);
             //getUser();
             var search = $("#searchInput").val()
             getVideos(search);
@@ -33,6 +33,22 @@ jQuery(document).ready(function($) { //il dollaro significa che quando questa fu
         })
 
     }
+    //
+    $("#searchInput").keypress(function(event) {
+            console.log("tasto premuto", event.key, event.keyCode)
+
+            if (event.keyCode === 13) {
+                var search = $(this).val()
+                getVideos(search);
+            }
+        })
+        .focus(function(event) {
+            $(this).addClass("inputFocus")
+            console.log("Focus")
+        })
+        .blur(function() {
+            $(this).removeClass("inputFocus")
+        })
 
     function getVideos(search) {
         console.log("Chiamo getVideo");
@@ -52,7 +68,8 @@ jQuery(document).ready(function($) { //il dollaro significa che quando questa fu
         //creo la funzione FILLTABLE 
         var $tableBody = $("#usersTable tbody")
 
-        $tableBody.html("");
+        //$tableBody.html(""); //ripulisco il contenuto del body
+        $tableBody.empty();
 
         $.each(arrayData, function(index, video) {
             console.log(index, video)
@@ -65,7 +82,7 @@ jQuery(document).ready(function($) { //il dollaro significa che quando questa fu
             $tableBody.append(newRow)
         })
 
-        //ritardo MANUALMENTE di due secondi
+        //ritardo MANUALMENTE di due millisecondi
         setTimeout(function() {
             $("#loadingBar").fadeOut(); //nascondo la barra di caricamento
             $("#usersTable").fadeIn(); //mostro la tabella

@@ -38,11 +38,8 @@ body {
     display: none
 }
 
-
-/*.start #loadingBar {
-    display: none
+.inputFocus {
+    color: green;
+    background-color: lightgrey;
+    border: 1px solid
 }
-
-.start #usersTable {
-    display: none
-}*/
